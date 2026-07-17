@@ -1,0 +1,37 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Steam2Api.Entities
+{
+     [Table("juegos")]
+    public class GameEntity
+    {
+        [Required()]
+        [Column("name")]
+        public string Name { get; set; }
+
+        [Required()]
+        [Column("genre")]
+        public string Genre { get; set; }
+
+        [Required()]
+        [Column("price")]
+        public decimal Price { get; set; }
+
+        [Required()]
+        [Column("state")]
+        public bool State { get; set; }
+
+        [Required()]
+        [Column("available_units")]
+        public int AvailableUnits { get; set; }
+
+        [Column("description")]
+        public string Description { get; set; }
+
+        [Column("image_url")]
+        public string ImageUrl { get; set; }
+
+        public List<InvoiceDetailEntity> InvoiceDetails { get; set; } = new();
+    }
+}
