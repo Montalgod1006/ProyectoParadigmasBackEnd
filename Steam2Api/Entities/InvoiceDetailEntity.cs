@@ -1,7 +1,35 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Steam2Api.Entities
 {
+    [Table("detalle_facturas")]
     public class InvoiceDetailEntity
     {
+        [Required()]
+        [Column("invoice_id")]
+        public Guid InvoiceId { get; set; }
 
+        [Required()]
+        [Column("game_id")]
+        public Guid GameId { get; set; }
+
+        [Required()]
+        [Column("quantity")]
+        public int Quantity { get; set; }
+
+        [Required()]
+        [Column("unit_price")]
+        public decimal UnitPrice { get; set; }
+
+        [Required()]
+        [Column("subtotal")]
+        public decimal Subtotal { get; set; }
+
+        [ForeignKey(nameof(InvoiceId))]
+        public InvoiceEntity Invoice { get; set; }
+
+        [ForeignKey(nameof(GameId))]
+        public GameEntity Game { get; set; }
     }
 }
