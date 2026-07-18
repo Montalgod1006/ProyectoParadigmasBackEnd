@@ -22,10 +22,6 @@ namespace Steam2Api.Entities
         [Column("state")]
         public bool State { get; set; }
 
-        [Required()]
-        [Column("available_units")]
-        public int AvailableUnits { get; set; }
-
         [Column("description")]
         public string Description { get; set; }
 
