@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Steam2Api.Entities
 {
      [Table("juegos")]
-    public class GameEntity
+    public class GameEntity : BaseEntity
     {
         [Required()]
         [Column("name")]

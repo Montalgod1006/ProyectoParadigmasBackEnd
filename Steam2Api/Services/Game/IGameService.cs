@@ -1,6 +1,5 @@
 using Steam2Api.Dtos.Common;
 using Steam2Api.Dtos.Game;
-using Steam2Api.Entities;
 
 namespace Steam2Api.Services.Game
 {
