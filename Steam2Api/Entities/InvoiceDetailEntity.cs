@@ -8,11 +8,11 @@ namespace Steam2Api.Entities
     {
         [Required()]
         [Column("invoice_id")]
-        public Guid InvoiceId { get; set; }
+        public string InvoiceId { get; set; }
 
         [Required()]
         [Column("game_id")]
-        public Guid GameId { get; set; }
+        public string GameId { get; set; }
 
         [Required()]
         [Column("quantity")]

@@ -8,7 +8,7 @@ namespace Steam2Api.Entities
     {
         [Required()]
         [Column("user_id")]
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
 
         [Required()]
         [Column("invoice_date")]

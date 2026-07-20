@@ -11,8 +11,6 @@ namespace Steam2Api.Dtos.Game
 
         public bool State { get; set; }
 
-        public int AvailableUnits { get; set; }
-
         public string Description { get; set; }
 
         public string ImageUrl { get; set; }
