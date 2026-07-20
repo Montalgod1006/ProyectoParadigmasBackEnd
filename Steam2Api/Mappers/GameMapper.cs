@@ -5,11 +5,35 @@ namespace Steam2Api.Mappers
 {
     public static class GameMapper
     {
+        public static List <GameDto> ListEntityToListDto(List<GameEntity> entities)
+        { 
+            return entities.Select(game => new GameDto
+            {
+                Id =  game.Id,
+                Name = game.Name,
+                Genre = game.Genre,
+                Price = game.Price,
+                State = game.State,
+                Description = game.Description,
+            }).ToList();
+        }
+        public static GameDto EntityToDto(GameEntity entity)
+        {
+            return new GameDto
+            {
+                Id =  entity.Id,
+                Name = entity.Name,
+                Genre = entity.Genre,
+                Price = entity.Price,
+                State = entity.State,
+                Description = entity.Description,
+            };
+        }
         public static GameEntity CreateDtoToEntity(GameCreateDto dto)
         {
             return new GameEntity
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.NewGuid().ToString(),
                 Name = dto.Name,
                 Genre = dto.Genre,
                 Price = dto.Price,
