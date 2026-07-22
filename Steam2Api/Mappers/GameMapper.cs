@@ -15,6 +15,7 @@ namespace Steam2Api.Mappers
                 Price = game.Price,
                 State = game.State,
                 Description = game.Description,
+                ImageUrl = game.ImageUrl,
             }).ToList();
         }
         public static GameDto EntityToDto(GameEntity entity)
@@ -27,6 +28,7 @@ namespace Steam2Api.Mappers
                 Price = entity.Price,
                 State = entity.State,
                 Description = entity.Description,
+                ImageUrl = entity.ImageUrl,
             };
         }
         public static GameEntity CreateDtoToEntity(GameCreateDto dto)
@@ -38,7 +40,8 @@ namespace Steam2Api.Mappers
                 Genre = dto.Genre,
                 Price = dto.Price,
                 State = dto.State,
-                Description = dto.Description
+                Description = dto.Description,
+                ImageUrl = dto.ImageUrl
             };
         }
 
@@ -49,6 +52,7 @@ namespace Steam2Api.Mappers
             entity.Price = dto.Price;
             entity.State = dto.State;
             entity.Description = dto.Description;
+            entity.ImageUrl = dto.ImageUrl;
 
             return entity;
         }

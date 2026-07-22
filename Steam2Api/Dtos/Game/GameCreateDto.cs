@@ -19,10 +19,6 @@ namespace Steam2Api.Dtos.Game
         [Required(ErrorMessage = "El estado es obligatorio")]
         public bool State { get; set; }
 
-        [Required(ErrorMessage = "Las unidades disponibles son obligatorias")]
-        [Range(0, int.MaxValue, ErrorMessage = "Las unidades disponibles no pueden ser negativas")]
-        public int AvailableUnits { get; set; }
-
         [StringLength(500, ErrorMessage = "La descripción no puede exceder 500 caracteres")]
         public string Description { get; set; }
 
