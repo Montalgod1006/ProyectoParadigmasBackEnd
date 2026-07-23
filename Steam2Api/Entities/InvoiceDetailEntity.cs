@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Steam2Api.Entities
 {
     [Table("detalle_facturas")]
-    public class InvoiceDetailEntity
+    public class InvoiceDetailEntity : BaseEntity
     {
         [Required()]
         [Column("invoice_id")]

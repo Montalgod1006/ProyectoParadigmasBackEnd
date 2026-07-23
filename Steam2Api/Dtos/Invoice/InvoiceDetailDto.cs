@@ -2,9 +2,11 @@ namespace Steam2Api.Dtos.Invoice
 {
     public class InvoiceDetailDto
     {
-        public Guid InvoiceId { get; set; }
+        public string Id { get; set; }
 
-        public Guid GameId { get; set; }
+        public string InvoiceId { get; set; }
+
+        public string GameId { get; set; }
 
         public int Quantity { get; set; }
 
