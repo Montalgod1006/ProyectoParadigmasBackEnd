@@ -29,13 +29,6 @@ namespace Steam2Api.Controller
             return StatusCode((int)response.StatusCode, response);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] InvoiceCreateDto dto)
-        {
-            var response = await _invoiceService.CreateAsync(dto);
-            return StatusCode((int)response.StatusCode, response);
-        }
-
     
         }
     }
