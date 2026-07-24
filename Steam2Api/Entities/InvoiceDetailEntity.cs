@@ -15,10 +15,6 @@ namespace Steam2Api.Entities
         public string GameId { get; set; }
 
         [Required()]
-        [Column("quantity")]
-        public int Quantity { get; set; }
-
-        [Required()]
         [Column("unit_price")]
         public decimal UnitPrice { get; set; }
 

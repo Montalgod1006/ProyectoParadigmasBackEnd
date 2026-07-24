@@ -18,10 +18,6 @@ namespace Steam2Api.Entities
         [Column("price")]
         public decimal Price { get; set; }
 
-        [Required()]
-        [Column("state")]
-        public bool State { get; set; }
-
         [Column("description")]
         public string Description { get; set; }
 

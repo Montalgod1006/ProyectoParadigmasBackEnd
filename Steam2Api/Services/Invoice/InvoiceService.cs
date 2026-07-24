@@ -58,76 +58,7 @@ namespace Steam2Api.Services.Invoice
             };
         }
     //TODO: Hacer que la factura se cree automáticamente cuando se haga una compra.
-        public async Task<ResponseDto<InvoiceActionResponseDto>> CreateAsync(InvoiceCreateDto dto)
-        {
-            var userExists = await _context.Users.AnyAsync(x => x.Id == dto.UserId);
-            if (!userExists)
-            {
-                return new ResponseDto<InvoiceActionResponseDto>
-                {
-                    StatusCode = HttpStatusCode.NOT_FOUND,
-                    Status = false,
-                    Message = "El usuario no existe."
-                };
-            }
+       
+}
 
-            var gameIds = dto.Details.Select(x => x.GameId).Distinct().ToList();
-            var games = await _context.Games.Where(x => gameIds.Contains(x.Id)).ToListAsync();
-
-            if (games.Count != gameIds.Count)
-            {
-                return new ResponseDto<InvoiceActionResponseDto>
-                {
-                    StatusCode = HttpStatusCode.NOT_FOUND,
-                    Status = false,
-                    Message = "Uno o más juegos no existen."
-                };
-            }
-
-
-            var invoice = new InvoiceEntity
-            {
-                Id = Guid.NewGuid().ToString(),
-                UserId = dto.UserId,
-                InvoiceDate = DateTime.UtcNow,
-                Total = 0
-            };
-
-            var invoiceDetails = new List<InvoiceDetailEntity>();
-            decimal total = 0;
-
-            foreach (var detailDto in dto.Details)
-            {
-                var game = games.First(x => x.Id == detailDto.GameId);
-
-                invoiceDetails.Add(new InvoiceDetailEntity
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    InvoiceId = invoice.Id,
-                    GameId = game.Id,
-                   
-                    UnitPrice = game.Price,
-                });
-
-                // total +=
-            }
-
-            invoice.Total = total;
-            invoice.InvoiceDetails = invoiceDetails;
-
-            await _context.Invoices.AddAsync(invoice);
-            _context.InvoiceDetails.AddRange(invoiceDetails);
-            _context.Games.UpdateRange(games);
-            await _context.SaveChangesAsync();
-
-            return new ResponseDto<InvoiceActionResponseDto>
-            {
-                StatusCode = HttpStatusCode.CREATED,
-                Status = true,
-                Message = HttpMessageResponse.REGISTER_CREATED,
-                Data = new InvoiceActionResponseDto { Id = invoice.Id }
-            };
-        }
-
-    }
 }

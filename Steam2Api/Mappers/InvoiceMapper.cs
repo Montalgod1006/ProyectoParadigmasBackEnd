@@ -24,24 +24,6 @@ namespace Steam2Api.Mappers
             };
         }
 
-        public static InvoiceEntity CreateDtoToEntity(InvoiceCreateDto dto)
-        {
-            return new InvoiceEntity
-            {
-                Id = Guid.NewGuid().ToString(),
-                UserId = dto.UserId,
-                InvoiceDate = dto.InvoiceDate,
-                Total = 0
-            };
-        }
-
-        public static InvoiceEntity EditDtoToEntity(InvoiceEntity entity, InvoiceEditDto dto)
-        {
-            entity.UserId = dto.UserId;
-            entity.InvoiceDate = dto.InvoiceDate;
-            return entity;
-        }
-
         public static List<InvoiceDetailDto> DetailListEntityToListDto(List<InvoiceDetailEntity> entities)
         {
             return entities.Select(entity => new InvoiceDetailDto
@@ -49,7 +31,6 @@ namespace Steam2Api.Mappers
                 Id = entity.Id,
                 InvoiceId = entity.InvoiceId,
                 GameId = entity.GameId,
-                Quantity = entity.Quantity,
                 UnitPrice = entity.UnitPrice,
                 Subtotal = entity.Subtotal
             }).ToList();
@@ -62,7 +43,6 @@ namespace Steam2Api.Mappers
                 Id = entity.Id,
                 InvoiceId = entity.InvoiceId,
                 GameId = entity.GameId,
-                Quantity = entity.Quantity,
                 UnitPrice = entity.UnitPrice,
                 Subtotal = entity.Subtotal
             };
@@ -75,16 +55,7 @@ namespace Steam2Api.Mappers
                 Id = Guid.NewGuid().ToString(),
                 InvoiceId = invoiceId,
                 GameId = dto.GameId,
-                Quantity = dto.Quantity
             };
-        }
-
-        public static InvoiceDetailEntity DetailEditDtoToEntity(InvoiceDetailEntity entity, InvoiceDetailEditDto dto)
-        {
-            entity.InvoiceId = dto.InvoiceId;
-            entity.GameId = dto.GameId;
-            entity.Quantity = dto.Quantity;
-            return entity;
         }
     }
 }

@@ -1,9 +1,9 @@
+using Steam2Api.Entities;
+
 namespace Steam2Api.Dtos.Invoice
 {
-    public class InvoiceDto
+    public class InvoiceDto : BaseEntity
     {
-        public string Id { get; set; }
-
         public string UserId { get; set; }
 
         public DateTime InvoiceDate { get; set; }
