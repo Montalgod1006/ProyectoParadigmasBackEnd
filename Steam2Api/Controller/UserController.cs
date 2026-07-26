@@ -19,35 +19,35 @@ namespace Steam2Api.Controller
         public async Task<IActionResult> GetAll()
         {
             var response = await _userService.GetAllAsync();
-            return StatusCode((int)response.StatusCode, response);
+            return StatusCode(response.StatusCode, response);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetOneById(string id)
         {
             var response = await _userService.GetOneByIdAsync(id);
-            return StatusCode((int)response.StatusCode, response);
+            return StatusCode(response.StatusCode, response);
         }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] UserCreateDto dto)
         {
             var response = await _userService.CreateAsync(dto);
-            return StatusCode((int)response.StatusCode, response);
+            return StatusCode(response.StatusCode, response);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Edit(string id, [FromBody] UserEditDto dto)
         {
             var response = await _userService.EditAsync(id, dto);
-            return StatusCode((int)response.StatusCode, response);
+            return StatusCode(response.StatusCode, response);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var response = await _userService.DeleteAsync(id);
-            return StatusCode((int)response.StatusCode, response);
+            return StatusCode(response.StatusCode, response);
         }
     }
 }
