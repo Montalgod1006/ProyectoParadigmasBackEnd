@@ -1,12 +1,13 @@
-using Steam2Api.Entities;
+using Steam2Api.Dtos.Invoice;
 
 namespace Steam2Api.Dtos.User
 {
     public class UserDto
     {
-        public string Id { get; set; } 
+        public string Id { get; set; }
 
         public string UserName { get; set; }
-        public List<InvoiceEntity> Invoices { get; set; }
+
+        public List<InvoiceDto> Invoices { get; set; } = new();
     }
 }
