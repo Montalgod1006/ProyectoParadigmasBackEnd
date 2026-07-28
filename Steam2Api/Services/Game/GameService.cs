@@ -81,6 +81,7 @@ namespace Steam2Api.Services.Game
                     Status = false,
                 };
             }
+            
             return new ResponseDto<GameDto>
             {
                 StatusCode = HttpStatusCode.Ok,

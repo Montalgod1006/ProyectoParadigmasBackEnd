@@ -19,7 +19,8 @@ namespace Steam2Api.Mappers
             return new UserDto
             {
                 Id = entity.Id,
-                UserName = entity.UserName
+                UserName = entity.UserName,
+                Invoices = entity.Invoices
             };
         }
 

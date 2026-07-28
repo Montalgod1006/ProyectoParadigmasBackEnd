@@ -22,6 +22,7 @@ namespace Steam2Api.Services.Purchase
         public async Task<ResponseDto<InvoiceDto>> CreateInvoiceAsync(PurchaseCreateDto dto)
         {
             var user = await _context.Users
+                .Include(u => u.Invoices)
                 .FirstOrDefaultAsync(u => u.Id == dto.UserId);
 
             if (user is null)
@@ -34,11 +35,10 @@ namespace Steam2Api.Services.Purchase
                 };
             }
 
-
             var gameIds = dto.GameIds;
 
             if (gameIds == null || gameIds.Count == 0)
-            {
+            {   
                 return new ResponseDto<InvoiceDto>
                 {
                     StatusCode = HttpStatusCode.BAD_REQUEST,
@@ -105,7 +105,7 @@ namespace Steam2Api.Services.Purchase
                 invoice.InvoiceDetails.Add(invoiceDetail);
             }
 
-
+            user.Invoices.Add(invoice);
             _context.Invoices.Add(invoice);
 
             await _context.SaveChangesAsync();

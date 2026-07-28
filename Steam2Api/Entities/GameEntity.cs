@@ -23,8 +23,6 @@ namespace Steam2Api.Entities
 
         [Column("image_url")]
         public string ImageUrl { get; set; }
-        public List<GameEntity> Games { get; set; } = new();
-
 
         public List<InvoiceDetailEntity> InvoiceDetails { get; set; } = new();
     }
