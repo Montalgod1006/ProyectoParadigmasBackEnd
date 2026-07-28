@@ -16,9 +16,6 @@ namespace Steam2Api.Dtos.Game
         [Range(0, double.MaxValue, ErrorMessage = "El precio debe ser mayor o igual a 0")]
         public decimal Price { get; set; }
 
-        [Required(ErrorMessage = "El estado es obligatorio")]
-        public bool State { get; set; }
-
         [StringLength(500, ErrorMessage = "La descripción no puede exceder 500 caracteres")]
         public string Description { get; set; }
 

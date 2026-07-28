@@ -9,8 +9,6 @@ namespace Steam2Api.Dtos.Game
 
         public decimal Price { get; set; }
 
-        public bool State { get; set; }
-
         public string Description { get; set; }
 
         public string ImageUrl { get; set; }

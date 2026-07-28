@@ -30,7 +30,7 @@ namespace Steam2Api.Controller
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] GameCreateDto dto)
+        public async Task<IActionResult> Create(GameCreateDto dto)
         {
             var response = await _gameService.CreateAsync(dto);
             return StatusCode(response.StatusCode, response);
