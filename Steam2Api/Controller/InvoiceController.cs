@@ -19,14 +19,14 @@ namespace Steam2Api.Controller
         public async Task<IActionResult> GetAll()
         {
             var response = await _invoiceService.GetAllAsync();
-            return StatusCode((int)response.StatusCode, response);
+            return StatusCode(response.StatusCode, response);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetOneById(string id)
         {
             var response = await _invoiceService.GetOneByIdAsync(id);
-            return StatusCode((int)response.StatusCode, response);
+            return StatusCode(response.StatusCode, response);
         }
 
     

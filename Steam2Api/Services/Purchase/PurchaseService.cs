@@ -18,7 +18,8 @@ namespace Steam2Api.Services.Purchase
             _context = context;
         }
 
-        public async Task<ResponseDto<InvoiceDto>> CreateAsync(PurchaseCreateDto dto)
+        
+        public async Task<ResponseDto<InvoiceDto>> CreateInvoiceAsync(PurchaseCreateDto dto)
         {
             var user = await _context.Users
                 .FirstOrDefaultAsync(u => u.Id == dto.UserId);
@@ -36,7 +37,7 @@ namespace Steam2Api.Services.Purchase
 
             var gameIds = dto.GameIds;
 
-            if (gameIds is null || gameIds.Count == 0)
+            if (gameIds == null || gameIds.Count == 0)
             {
                 return new ResponseDto<InvoiceDto>
                 {
@@ -55,8 +56,8 @@ namespace Steam2Api.Services.Purchase
 
             var games = await _context.Games
                 .Where(game => normalizedGames.Contains(game.Id))
-                .ToListAsync();
-
+                .ToListAsync();                                                                  
+                                                                                                                                
 
             if (games.Count != normalizedGames.Count)
             {
@@ -118,5 +119,7 @@ namespace Steam2Api.Services.Purchase
                 Data = response
             };
         }
+
+
     }
 }

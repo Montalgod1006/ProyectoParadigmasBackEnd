@@ -24,7 +24,7 @@ namespace Steam2Api.Controller
         public async Task<ActionResult> CreateInvoiceAsync (PurchaseCreateDto dto)
         {
             var response = await _purchaseService.CreateInvoiceAsync(dto);
-            return StatusCode((int)response.StatusCode, response);
+            return StatusCode(response.StatusCode, response);
         }
 
     }

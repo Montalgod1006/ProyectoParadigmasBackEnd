@@ -11,7 +11,6 @@ namespace Steam2Api.Services.Purchase
 {
     public interface IPurchaseService
     {
-        Task<ResponseDto<InvoiceActionResponseDto>> PurchaseGameAsync (PurchaseCreateDto dto);
         Task<ResponseDto<InvoiceDto>> CreateInvoiceAsync(PurchaseCreateDto dto);
     }
 }

@@ -57,7 +57,6 @@ namespace Steam2Api.Services.Invoice
                 Data = InvoiceMapper.EntityToDto(invoice)
             };
         }
-    //TODO: Hacer que la factura se cree automáticamente cuando se haga una compra.
        
 }
 
