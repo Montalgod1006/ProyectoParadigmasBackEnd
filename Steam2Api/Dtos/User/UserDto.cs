@@ -1,3 +1,5 @@
+using Steam2Api.Dtos.Invoice;
+
 namespace Steam2Api.Dtos.User
 {
     public class UserDto
@@ -5,5 +7,7 @@ namespace Steam2Api.Dtos.User
         public string Id { get; set; }
 
         public string UserName { get; set; }
+
+        public List<InvoiceDto> Invoices { get; set; } = new();
     }
 }

@@ -18,9 +18,11 @@ namespace Steam2Api.Services.Purchase
             _context = context;
         }
 
-        public async Task<ResponseDto<InvoiceDto>> CreateAsync(PurchaseCreateDto dto)
+        
+        public async Task<ResponseDto<InvoiceDto>> CreateInvoiceAsync(PurchaseCreateDto dto)
         {
             var user = await _context.Users
+                .Include(u => u.Invoices)
                 .FirstOrDefaultAsync(u => u.Id == dto.UserId);
 
             if (user is null)
@@ -33,11 +35,10 @@ namespace Steam2Api.Services.Purchase
                 };
             }
 
-
             var gameIds = dto.GameIds;
 
-            if (gameIds is null || gameIds.Count == 0)
-            {
+            if (gameIds == null || gameIds.Count == 0)
+            {   
                 return new ResponseDto<InvoiceDto>
                 {
                     StatusCode = HttpStatusCode.BAD_REQUEST,
@@ -55,8 +56,8 @@ namespace Steam2Api.Services.Purchase
 
             var games = await _context.Games
                 .Where(game => normalizedGames.Contains(game.Id))
-                .ToListAsync();
-
+                .ToListAsync();                                                                  
+                                                                                                                                
 
             if (games.Count != normalizedGames.Count)
             {
@@ -104,7 +105,7 @@ namespace Steam2Api.Services.Purchase
                 invoice.InvoiceDetails.Add(invoiceDetail);
             }
 
-
+            user.Invoices.Add(invoice);
             _context.Invoices.Add(invoice);
 
             await _context.SaveChangesAsync();
@@ -118,5 +119,7 @@ namespace Steam2Api.Services.Purchase
                 Data = response
             };
         }
+
+
     }
 }

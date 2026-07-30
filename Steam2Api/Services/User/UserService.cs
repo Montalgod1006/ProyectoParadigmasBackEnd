@@ -18,7 +18,9 @@ namespace Steam2Api.Services.User
 
         public async Task<ResponseDto<List<UserDto>>> GetAllAsync()
         {
-            var users = await _context.Users.ToListAsync();
+            var users = await _context.Users
+                .Include(u => u.Invoices)
+                .ToListAsync();
             return new ResponseDto<List<UserDto>>
             {
                 StatusCode = HttpStatusCode.Ok,
@@ -30,7 +32,9 @@ namespace Steam2Api.Services.User
 
         public async Task<ResponseDto<UserDto>> GetOneByIdAsync(string id)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var user = await _context.Users
+                .Include(u => u.Invoices)
+                .FirstOrDefaultAsync(x => x.Id == id);
             if (user is null)
             {
                 return new ResponseDto<UserDto>

@@ -81,6 +81,7 @@ namespace Steam2Api.Services.Game
                     Status = false,
                 };
             }
+            
             return new ResponseDto<GameDto>
             {
                 StatusCode = HttpStatusCode.Ok,
@@ -92,6 +93,17 @@ namespace Steam2Api.Services.Game
 
         public async Task<ResponseDto<GameActionResponseDto>> CreateAsync(GameCreateDto dto)
         {
+            var Game = dto;
+            if(Game is null)
+            {
+                return new ResponseDto<GameActionResponseDto>
+                {
+                    StatusCode = HttpStatusCode.BAD_REQUEST,
+                    Status = false,
+                    Message = HttpMessageResponse.REGISTER_NOT_FOUND
+                };
+            }
+            ;
             GameEntity gameEntity = GameMapper.CreateDtoToEntity(dto);
 
             _context.Games.Add(gameEntity);

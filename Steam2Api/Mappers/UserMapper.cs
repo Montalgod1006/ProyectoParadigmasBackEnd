@@ -1,3 +1,4 @@
+using Steam2Api.Dtos.Invoice;
 using Steam2Api.Dtos.User;
 using Steam2Api.Entities;
 
@@ -10,7 +11,10 @@ namespace Steam2Api.Mappers
             return entities.Select(user => new UserDto
             {
                 Id = user.Id,
-                UserName = user.UserName
+                UserName = user.UserName,
+                Invoices = user.Invoices != null
+                    ? user.Invoices.Select(InvoiceMapper.EntityToDto).ToList()
+                    : new List<InvoiceDto>()
             }).ToList();
         }
 
@@ -19,7 +23,10 @@ namespace Steam2Api.Mappers
             return new UserDto
             {
                 Id = entity.Id,
-                UserName = entity.UserName
+                UserName = entity.UserName,
+                Invoices = entity.Invoices != null
+                    ? entity.Invoices.Select(InvoiceMapper.EntityToDto).ToList()
+                    : new List<InvoiceDto>()
             };
         }
 
