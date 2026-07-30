@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Steam2Api.Dtos.Invoice;
 using Steam2Api.Services.Invoice;
 
 namespace Steam2Api.Controller

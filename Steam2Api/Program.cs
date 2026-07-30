@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using Steam2Api.Data;
+using Steam2Api.Extensions;
 using Steam2Api.Services.Game;
 using Steam2Api.Services.Invoice;
 using Steam2Api.Services.Purchase;
@@ -30,6 +31,8 @@ builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IInvoiceService, InvoiceService>();
 builder.Services.AddScoped<IPurchaseService, PurchaseService>();
+
+builder.Services.AddCorsConfiguration(builder.Configuration);
 
 var app = builder.Build();
 
