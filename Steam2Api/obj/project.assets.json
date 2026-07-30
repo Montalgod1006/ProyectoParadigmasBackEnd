@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "Humanizer.Core/2.14.1": {
@@ -2920,19 +2920,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\ACER NITRO V16\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\Developer CSharp\\Projects\\pac-2-2026-poo\\ProyectoFinalPOO\\Backend\\ProyectoParadigmasBackEnd\\Steam2Api\\Steam2Api.csproj",
+      "projectUniqueName": "C:\\Users\\ACER NITRO V16\\ProyectosParadigmas\\ProyectoFinalParadigmas\\ProyectoParadigmasBackEnd\\Steam2Api\\Steam2Api.csproj",
       "projectName": "Steam2Api",
-      "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\Developer CSharp\\Projects\\pac-2-2026-poo\\ProyectoFinalPOO\\Backend\\ProyectoParadigmasBackEnd\\Steam2Api\\Steam2Api.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\Developer CSharp\\Projects\\pac-2-2026-poo\\ProyectoFinalPOO\\Backend\\ProyectoParadigmasBackEnd\\Steam2Api\\obj\\",
+      "projectPath": "C:\\Users\\ACER NITRO V16\\ProyectosParadigmas\\ProyectoFinalParadigmas\\ProyectoParadigmasBackEnd\\Steam2Api\\Steam2Api.csproj",
+      "packagesPath": "C:\\Users\\ACER NITRO V16\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ACER NITRO V16\\ProyectosParadigmas\\ProyectoFinalParadigmas\\ProyectoParadigmasBackEnd\\Steam2Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ACER NITRO V16\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -2942,6 +2942,7 @@
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -2956,10 +2957,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
@@ -3006,7 +3008,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -3429,7 +3431,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "message": "El paquete \"Microsoft.OpenApi\" 2.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
       "libraryId": "Microsoft.OpenApi",
       "targetGraphs": [
         "net10.0"
@@ -3439,7 +3441,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
+      "message": "El paquete \"SQLitePCLRaw.lib.e_sqlite3\" 2.1.11 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
       "libraryId": "SQLitePCLRaw.lib.e_sqlite3",
       "targetGraphs": [
         "net10.0"
