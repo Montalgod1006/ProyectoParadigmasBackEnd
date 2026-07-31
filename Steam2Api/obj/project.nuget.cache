@@ -53,7 +53,7 @@
     {
       "code": "NU1903",
       "level": "Warning",
-      "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
+      "message": "El paquete \"Microsoft.OpenApi\" 2.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
       "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\Developer CSharp\\Projects\\pac-2-2026-poo\\ProyectoFinalPOO\\Backend\\ProyectoParadigmasBackEnd\\Steam2Api\\Steam2Api.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\User\\OneDrive\\Desktop\\Developer CSharp\\Projects\\pac-2-2026-poo\\ProyectoFinalPOO\\Backend\\ProyectoParadigmasBackEnd\\Steam2Api\\Steam2Api.csproj",
@@ -65,7 +65,7 @@
     {
       "code": "NU1903",
       "level": "Warning",
-      "message": "Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
+      "message": "El paquete \"SQLitePCLRaw.lib.e_sqlite3\" 2.1.11 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
       "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\Developer CSharp\\Projects\\pac-2-2026-poo\\ProyectoFinalPOO\\Backend\\ProyectoParadigmasBackEnd\\Steam2Api\\Steam2Api.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\User\\OneDrive\\Desktop\\Developer CSharp\\Projects\\pac-2-2026-poo\\ProyectoFinalPOO\\Backend\\ProyectoParadigmasBackEnd\\Steam2Api\\Steam2Api.csproj",
