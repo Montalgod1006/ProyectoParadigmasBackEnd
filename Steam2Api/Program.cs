@@ -4,6 +4,7 @@ using Steam2Api.Data;
 using Steam2Api.Extensions;
 using Steam2Api.Services.Game;
 using Steam2Api.Services.Invoice;
+using Steam2Api.Services.PayPal;
 using Steam2Api.Services.Purchase;
 using Steam2Api.Services.User;
 
@@ -31,6 +32,8 @@ builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IInvoiceService, InvoiceService>();
 builder.Services.AddScoped<IPurchaseService, PurchaseService>();
+
+builder.Services.AddHttpClient<IPayPalService, PayPalService>();
 
 builder.Services.AddCorsConfiguration(builder.Configuration);
 
