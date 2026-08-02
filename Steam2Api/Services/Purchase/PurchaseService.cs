@@ -24,6 +24,7 @@ namespace Steam2Api.Services.Purchase
         {
             var user = await _context.Users
                 .Include(u => u.Invoices)
+                .Include(u => u.Games)
                 .FirstOrDefaultAsync(u => u.Id == dto.UserId);
 
             if (user is null)
@@ -100,6 +101,13 @@ namespace Steam2Api.Services.Purchase
             }
 
             user.Invoices.Add(invoice);
+            foreach (var game in games)
+            {
+                if (!user.Games.Any(userGame => userGame.Id == game.Id))
+                {
+                    user.Games.Add(game);
+                }
+            }
             _context.Invoices.Add(invoice);
 
             await _context.SaveChangesAsync();
