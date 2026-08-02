@@ -3,7 +3,6 @@ using Steam2Api.Constants;
 using Steam2Api.Data;
 using Steam2Api.Dtos.Common;
 using Steam2Api.Dtos.Invoice;
-using Steam2Api.Entities;
 using Steam2Api.Mappers;
 
 namespace Steam2Api.Services.Invoice
