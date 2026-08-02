@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Steam2Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27d7b64195876e1ab3f01d42186ababf319e5b4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e678d02323751bea6cad1e21003ae4f0cff39a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Steam2Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Steam2Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

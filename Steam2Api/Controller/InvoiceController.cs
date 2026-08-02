@@ -27,6 +27,12 @@ namespace Steam2Api.Controller
             var response = await _invoiceService.GetOneByIdAsync(id);
             return StatusCode(response.StatusCode, response);
         }
+        [HttpGet("/user/{id}")]
+        public async Task<IActionResult> GetOneByIdUserAsync(string id)
+        {
+            var response = await _invoiceService.GetOneByIdUserAsync(id);
+            return StatusCode(response.StatusCode, response);
+        }
 
     
         }

@@ -7,5 +7,6 @@ namespace Steam2Api.Services.Invoice
     {
         Task<ResponseDto<List<InvoiceDto>>> GetAllAsync();
         Task<ResponseDto<InvoiceDto>> GetOneByIdAsync(string id);
+        Task<ResponseDto<InvoiceDto>> GetOneByIdUserAsync(string id);
     }
 }

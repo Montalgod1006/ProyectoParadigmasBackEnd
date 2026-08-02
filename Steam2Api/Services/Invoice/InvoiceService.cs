@@ -56,6 +56,30 @@ namespace Steam2Api.Services.Invoice
                 Data = InvoiceMapper.EntityToDto(invoice)
             };
         }
+        public async Task<ResponseDto<InvoiceDto>> GetOneByIdUserAsync(string id)
+        {
+            var invoice = await _context.Invoices
+                .Include(x => x.InvoiceDetails)
+                .FirstOrDefaultAsync(x => x.UserId == id);
+
+            if (invoice is null)
+            {
+                return new ResponseDto<InvoiceDto>
+                {
+                    StatusCode = HttpStatusCode.NOT_FOUND,
+                    Status = false,
+                    Message = HttpMessageResponse.REGISTER_NOT_FOUND
+                };
+            }
+
+            return new ResponseDto<InvoiceDto>
+            {
+                StatusCode = HttpStatusCode.Ok,
+                Status = true,
+                Message = HttpMessageResponse.REGISTER_FOUND,
+                Data = InvoiceMapper.EntityToDto(invoice)
+            };
+        }
        
 }
 
