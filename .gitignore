@@ -524,5 +524,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.db
+*.db-shm
+*.db-wal
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp,dotnetcore,images,video,windows,visualstudiocode
