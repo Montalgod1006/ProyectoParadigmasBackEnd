@@ -25,5 +25,6 @@ namespace Steam2Api.Entities
         public string ImageUrl { get; set; }
 
         public List<InvoiceDetailEntity> InvoiceDetails { get; set; } = new();
+        public List<UserEntity> Users { get; set; } = new();
     }
 }

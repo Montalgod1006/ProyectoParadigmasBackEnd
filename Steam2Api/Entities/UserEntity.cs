@@ -15,6 +15,6 @@ namespace Steam2Api.Entities
         public string Password { get; set; }
 
         public List<InvoiceEntity> Invoices { get; set; } = new();
-        //Todo: Que salgan los juegos que ha comprado. 
+        public List<GameEntity> Games { get; set; } = new();
     }
 }
