@@ -20,6 +20,7 @@ namespace Steam2Api.Services.User
         {
             var users = await _context.Users
                 .Include(u => u.Invoices)
+                .Include(u => u.Games)
                 .ToListAsync();
             return new ResponseDto<List<UserDto>>
             {
@@ -34,6 +35,7 @@ namespace Steam2Api.Services.User
         {
             var user = await _context.Users
                 .Include(u => u.Invoices)
+                .Include(u => u.Games)
                 .FirstOrDefaultAsync(x => x.Id == id);
             if (user is null)
             {
