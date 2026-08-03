@@ -524,6 +524,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.db
+*.db-shm
+*.db-wal
 
 /Steam2Api/obj/
 /bin/

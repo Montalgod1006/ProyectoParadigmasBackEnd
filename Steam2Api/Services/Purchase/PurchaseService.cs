@@ -101,7 +101,15 @@ namespace Steam2Api.Services.Purchase
             }
 
             user.Invoices.Add(invoice);
-            _context.Invoices.Add(invoice);
+
+            foreach (var game in games)
+            {
+                if (!user.Games.Any(userGame => userGame.Id == game.Id))
+                {
+                    user.Games.Add(game);
+                    game.Users.Add(user);
+                }
+            }
 
             foreach (var game in games)
             {
