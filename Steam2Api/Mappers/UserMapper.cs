@@ -1,3 +1,4 @@
+using Steam2Api.Dtos.Game;
 using Steam2Api.Dtos.Invoice;
 using Steam2Api.Dtos.User;
 using Steam2Api.Entities;
@@ -14,7 +15,10 @@ namespace Steam2Api.Mappers
                 UserName = user.UserName,
                 Invoices = user.Invoices != null
                     ? user.Invoices.Select(InvoiceMapper.EntityToDto).ToList()
-                    : new List<InvoiceDto>()
+                    : new List<InvoiceDto>(),
+               Games = user.Games != null
+                    ? GameMapper.ListEntityToListDto(user.Games)
+                    : new List<GameDto>()
             }).ToList();
         }
 
@@ -26,7 +30,10 @@ namespace Steam2Api.Mappers
                 UserName = entity.UserName,
                 Invoices = entity.Invoices != null
                     ? entity.Invoices.Select(InvoiceMapper.EntityToDto).ToList()
-                    : new List<InvoiceDto>()
+                    : new List<InvoiceDto>(),
+                Games = entity.Games != null
+                    ? GameMapper.ListEntityToListDto(entity.Games)
+                    : new List<GameDto>()
             };
         }
 

@@ -525,4 +525,11 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+/Steam2Api/obj/
+/bin/
+*.dll
+*.exe
+*.pdb
+*.cache
+
 # End of https://www.toptal.com/developers/gitignore/api/csharp,dotnetcore,images,video,windows,visualstudiocode
