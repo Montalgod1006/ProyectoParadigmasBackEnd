@@ -20,7 +20,7 @@ namespace Steam2Api.Services.Purchase
             _payPalService = payPalService;
         }
 
-        public async Task<ResponseDto<InvoiceDto>> CreateInvoiceAsync(PurchaseCreateDto dto)
+         public async Task<ResponseDto<InvoiceDto>> CreateInvoiceAsync(PurchaseCreateDto dto)
         {
             var user = await _context.Users
                 .Include(u => u.Invoices)
@@ -101,6 +101,15 @@ namespace Steam2Api.Services.Purchase
             }
 
             user.Invoices.Add(invoice);
+
+            foreach (var game in games)
+            {
+                if (!user.Games.Any(userGame => userGame.Id == game.Id))
+                {
+                    user.Games.Add(game);
+                    game.Users.Add(user);
+                }
+            }
 
             foreach (var game in games)
             {
